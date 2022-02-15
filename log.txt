@@ -1,0 +1,49 @@
+commit 30a94c3dbb0c5dbff3b1edc7a5c9789791ca4829
+Author: Dmitry Bogdanov <deman27@mail.ru>
+Date:   Tue Feb 15 22:12:21 2022 +0300
+
+    Revert "Changes in readme file"
+    
+    This reverts commit 5c4c3b19236515d7db78f50d88c8918497a60eb0.
+
+commit 5c4c3b19236515d7db78f50d88c8918497a60eb0
+Author: Dmitry Bogdanov <deman27@mail.ru>
+Date:   Tue Feb 15 22:11:40 2022 +0300
+
+    Changes in readme file
+
+commit 75b043ae69c25fa2e665de6302349e43578644be
+Merge: f01b541 629d95c
+Author: BDADmitry <98211706+BDADmitry@users.noreply.github.com>
+Date:   Tue Feb 15 22:07:11 2022 +0300
+
+    Merge pull request #2 from BDADmitry/dev
+    
+    Dev
+
+commit 629d95c6ab74d0dc45d92995166635737699449a
+Merge: f3db79d e719bc8
+Author: BDADmitry <98211706+BDADmitry@users.noreply.github.com>
+Date:   Tue Feb 15 22:06:12 2022 +0300
+
+    Merge pull request #1 from BDADmitry/BDADmitry-new_feature
+    
+    Added readme file and .gitignore
+
+commit e719bc85298380338419bf71adccfe8d7e34a1b3
+Author: Dmitry Bogdanov <deman27@mail.ru>
+Date:   Tue Feb 15 22:04:50 2022 +0300
+
+    Added readme file and .gitignore
+
+commit f3db79d7af7f5f026e8b016d47ced1117cf91243
+Author: Dmitry Bogdanov <deman27@mail.ru>
+Date:   Tue Feb 15 21:59:38 2022 +0300
+
+    Added testfile
+
+commit f01b5418157301442f29657c46f94b87eff38409
+Author: Dmitry Bogdanov <deman27@mail.ru>
+Date:   Tue Feb 15 21:58:15 2022 +0300
+
+    Added Readme file
