@@ -47,4 +47,4 @@ jobs:
        run : echo "My favorite day of week is ${{ secrets.FAVORITE_DAY_OF_WEEK }}"
        
      - name: Result of printing sekret key
-       run : echo "Result of printing sekret key is *** because it's incrypted)"
+       run : echo "Result of printing sekret key is *** because it's incrypted) "
