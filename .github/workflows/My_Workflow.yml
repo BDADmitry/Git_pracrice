@@ -22,7 +22,7 @@ jobs:
         run : ls -la
         
       - name: Printing content log.txt
-        run : cat log.txt
+        run : cat Task1/log.txt
         
       - name: Printing Hello from commit
         run : echo "Hello from ${{ env.DEPLOY_VER }} commit" 
