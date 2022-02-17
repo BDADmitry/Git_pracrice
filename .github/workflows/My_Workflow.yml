@@ -1,0 +1,50 @@
+
+name: My-Workflow
+env:
+  DEPLOY_VER: "Deploy-ver-${{ github.sha }}"
+  YEAR      : "2021"
+
+# Controls when the workflow will run
+on:
+  push:
+    branches:
+      - master
+  
+jobs:
+  First_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git clone repo
+        uses: actions/checkout@v1
+        
+      - name: List of files/directories in my github repository
+        run : ls -la
+        
+      - name: Printing content log.txt
+        run : cat log.txt
+        
+      - name: Printing Hello from commit
+        run : echo "Hello from ${{ env.DEPLOY_VER }} commit" 
+        
+  Second_job:
+    runs-on: ubuntu-latest
+    needs: [First_job]
+    env:
+       MONTH: "may"
+    
+    steps:
+     - name: Printing Date and Time
+       env:
+          DAY_OF_THE_MONTH: "30"
+       run : |
+        date
+        echo "Day - $DAY_OF_THE_MONTH"
+        echo "Month - ${{ env.MONTH }}"
+        echo "Year - ${{ env.YEAR }}"
+        
+     - name: Printing My favorite day of week
+       run : echo "My favorite day of week is ${{ secrets.FAVORITE_DAY_OF_WEEK }}"
+       
+     - name: Result of printing sekret key
+       run : echo "Result of printing sekret key is *** because it's incrypted)"
