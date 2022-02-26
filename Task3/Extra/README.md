@@ -1,0 +1,2 @@
+==========================================================================
+On terraform apply stage enter CIDR block 0.0.0.0/0 to install nginx on CentOS server then start "terraform apply" one more time with 10.0.10.10/32 on CIDR block to give CentOS outgoing and incoming access: ICMP, TCP/22, TCP/80, TCP/443, only to EC2 Ubuntu.
