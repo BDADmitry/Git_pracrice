@@ -1,0 +1,6 @@
+terraform*
+.terraform
+Task/.terraform*
+Task3/Extra/.terraform*
+
+

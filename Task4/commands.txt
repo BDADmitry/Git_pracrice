@@ -1,0 +1,33 @@
+sudo docker run hello-world
+#----------------------------------------------------------------------------------------------------------------
+docker pull httpd
+sudo docker exec -it my-apache-app /bin/bash
+#-----------------------------------------------------------------------------------------------------------------
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
+mkdir /home/ubuntu/www
+
+cat << HTML > index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Page</title>
+  </head>
+  <body>
+    <h1> Dmitry  2022</h1>
+  </body>
+</html>
+HTML
+
+docker run -dit --name my-apache-app -p 80:80 -v /home/ubuntu/www/:/usr/local/apache2/htdocs/ httpd:2.4
+#------------------------------------------------------------------------------------------------------------------
+
+docker build -t deman27/deman27/sandbox:ubuntu-apache
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+docker login
+docker build -t ubuntu-apache:2.0 .
+docker image tag ubuntu-apache:2.0 deman27/ubuntu-apache:2.0
+docker image push deman27/ubuntu-apache:2.0
