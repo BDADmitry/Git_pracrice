@@ -23,7 +23,7 @@ HTML
 docker run -dit --name my-apache-app -p 80:80 -v /home/ubuntu/www/:/usr/local/apache2/htdocs/ httpd:2.4
 #------------------------------------------------------------------------------------------------------------------
 
-docker build -t deman27/deman27/sandbox:ubuntu-apache
+
 
 
 
