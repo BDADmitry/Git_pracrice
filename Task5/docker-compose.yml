@@ -1,0 +1,17 @@
+version: '3'
+services:
+    apache:
+      image: deman27/ubuntu-apache:2.0
+    javaapp:
+      image: jenkins/jenkins:lts-jdk11
+      ports: 
+        - 8080:8080
+        - 50000:50000
+      depends_on:
+        - mysql
+    mysql:
+      image: mysql
+      command: --default-authentication-plugin=mysql_native_password
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: deman27
