@@ -1,0 +1,41 @@
+- name: Install Docker
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install curl
+      apt:
+        pkg: 
+         - ca-certificates
+         - curl
+         - gnupg
+         - lsb-release
+        state: latest
+        update_cache: yes
+
+    - name: Command in shell
+      ansible.builtin.shell: |
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+        echo \
+          "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+          $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    - name: Install Docker
+      apt: 
+        pkg:
+         - docker-ce
+         - docker-ce-cli
+         - containerd.io
+         - docker-compose
+        state: latest
+        update_cache: yes
+
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: /home/ansible/docker-compose.yml
+        dest: /home/docker-compose.yml
+        mode: '0644'
+
+    - name: start docker-compose
+      ansible.builtin.shell: 
+          docker-compose up -d
