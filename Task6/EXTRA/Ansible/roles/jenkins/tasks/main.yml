@@ -1,0 +1,25 @@
+    - name: Install curl
+      apt:
+        pkg:
+         - default-jre
+         - curl
+        state: latest
+        update_cache: yes
+
+    - name: Command in shell
+      ansible.builtin.shell: |
+        curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+          /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+        echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+          https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+          /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+    - name: Install Jenkins
+      apt: 
+        pkg:
+         - jenkins
+        state: latest
+        update_cache: yes
+
+
+

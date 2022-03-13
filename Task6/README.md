@@ -56,6 +56,8 @@ docker run --name jenkins-docker --rm --detach \
 -v /var/run/docker.sock://var/run/docker.sock \
 agent:latest
 
-- sudo usermod -aG docker ${USER}
+
+- sudo groupadd docker
+  sudo usermod -aG docker ${USER}
   sudo chmod 666 /var/run/docker.sock
    
