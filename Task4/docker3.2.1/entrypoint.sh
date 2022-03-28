@@ -7,3 +7,4 @@ echo "<html><head><title>New Page</title></head><body><h1>${DEVOPS}</h1></body><
 # Start Apache in foreground
 
 /usr/sbin/apache2ctl -DFOREGROUND
+
